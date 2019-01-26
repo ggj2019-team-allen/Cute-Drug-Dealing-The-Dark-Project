@@ -36,6 +36,8 @@ public class Player_Dousing : MonoBehaviour
             {
                 anim.SetTrigger("Player_Dousing");
                 rb2d.velocity = new Vector2(0, 0);
+                anim.SetFloat("Speed", 0);
+                anim.SetFloat("SpeedY", 0);
                 dousing = true;
                 StartCoroutine(Undouse());
             }

@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rigidBody;
     private Player_Dousing pdouse;
+    float movement = 0f;
+    float movementY = 0f;
+    public bool facingRight = true;
+    
 
     private bool dousing = false;
     // Start is called before the first frame update
@@ -29,10 +33,31 @@ public class PlayerController : MonoBehaviour
     {
         if (pdouse.dousing == false) 
         { 
-            float movement = Input.GetAxis("Horizontal"); 
-            float movementY = Input.GetAxis("Vertical"); 
-            rigidBody.velocity = new Vector2(movement * Xspeed, movementY * Yspeed); 
- 
+            movement = Input.GetAxis("Horizontal"); 
+            movementY = Input.GetAxis("Vertical");
+            
+
+            anim.SetFloat("Speed", Mathf.Abs(movement));
+            anim.SetFloat("SpeedY", Mathf.Abs(movementY));
+            if (movement < 0 && facingRight) Flip();
+            if (movement > 0 && !facingRight) Flip();
+
+        }
+    }
+
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+    void FixedUpdate()
+    {
+        if (pdouse.dousing == false)
+        {
+            rigidBody.velocity = new Vector2(movement * Xspeed, movementY * Yspeed);
+
             rigidBody.position = new Vector2
             (
                 Mathf.Clamp(rigidBody.position.x, xMin, xMax), Mathf.Clamp(rigidBody.position.y, yMin, yMax)
