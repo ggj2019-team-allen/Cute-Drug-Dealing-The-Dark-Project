@@ -59,6 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f57b84bae3cb834388fb088ebcf76e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameSceneName: MainGameScene
+  menuSceneName: MenuScene
   catPrefabs:
   - {fileID: 4055770645559244937, guid: 2e952890f68ba5949ac49bdfddd4639c, type: 3}
   - {fileID: 4910143999800493115, guid: 962d645e060cc7647b87e2858da13bf1, type: 3}

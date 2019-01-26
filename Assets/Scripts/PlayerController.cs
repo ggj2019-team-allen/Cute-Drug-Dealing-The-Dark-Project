@@ -17,8 +17,6 @@ public class PlayerController : MonoBehaviour
     float movementY = 0f;
     public bool facingRight = true;
     
-
-    private bool dousing = false;
     // Start is called before the first frame update
     void Start()
     {
