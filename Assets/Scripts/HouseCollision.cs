@@ -24,5 +24,9 @@ public class HouseCollision : MonoBehaviour
         {
             other.GetComponent<PlayerController>().catNip = 10;
         }
+       if(other.gameObject.tag=="NPC")
+        {
+            Destroy(other.gameObject);
+        }
      }
 }

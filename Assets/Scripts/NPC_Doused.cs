@@ -7,8 +7,10 @@ public class NPC_Doused : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb2d;
     private BoxCollider2D boxCollide;
+    
 
     public bool isDoused = false;
+    public ParticleSystem ps;
 
 
     // Start is called before the first frame update
@@ -17,6 +19,7 @@ public class NPC_Doused : MonoBehaviour
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         boxCollide = GetComponent<BoxCollider2D>();
+       
     }
 
     // Update is called once per frame
@@ -29,14 +32,14 @@ public class NPC_Doused : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (isDoused == false)
+        if (isDoused == false && other.gameObject.tag == "Player")
         {
-            if (other.gameObject.tag == "Player")
-            {
+            
                 isDoused = true;
-                anim.SetTrigger("Doused");
+                ps.Play();
                 
-            }
+                
+            
         }
     }
 }
