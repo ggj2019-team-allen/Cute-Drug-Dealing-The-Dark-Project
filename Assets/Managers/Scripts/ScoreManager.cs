@@ -67,7 +67,15 @@ public class ScoreManager : MonoBehaviour
 
     public int RecordHighScore()
     {
-        highScore = score;
+        if(score > highScore)
+        {
+            highScore = score;
+        }
         return highScore;
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
     }
 }

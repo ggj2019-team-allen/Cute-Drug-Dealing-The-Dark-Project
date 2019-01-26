@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameLoopScript : MonoBehaviour
 {
     float elapsedTime;
-    bool executed = false;
 
     [Header("Levels")]
     public string gameSceneName;
@@ -32,12 +31,6 @@ public class GameLoopScript : MonoBehaviour
 
         if(gameStarted)
         {
-            if(ScoreManager.instance.score >= 1000 && !executed)
-            {
-                SoundManager.instance.PlayBGM(BGMAudioID.MenuMusic);
-                executed = true;
-            }
-
             //Test Logic of Color Cats Scoring
             if(Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -47,7 +40,7 @@ public class GameLoopScript : MonoBehaviour
                     catPrefabs[0],
                     new Vector3
                     (
-                        Random.Range(-5.0f, 5.0f), 
+                        Random.Range(-9.0f, 9.0f), 
                         Random.Range(-3.0f, 3.0f), 
                         0.0f
                     ),
@@ -64,7 +57,7 @@ public class GameLoopScript : MonoBehaviour
                     catPrefabs[1],
                     new Vector3
                     (
-                        Random.Range(-5.0f, 5.0f), 
+                        Random.Range(-9.0f, 9.0f), 
                         Random.Range(-3.0f, 3.0f), 
                         0.0f
                     ),
@@ -81,7 +74,7 @@ public class GameLoopScript : MonoBehaviour
                     catPrefabs[2],
                     new Vector3
                     (
-                        Random.Range(-5.0f, 5.0f), 
+                        Random.Range(-9.0f, 9.0f), 
                         Random.Range(-3.0f, 3.0f), 
                         0.0f
                     ),
@@ -89,12 +82,18 @@ public class GameLoopScript : MonoBehaviour
                 );
                 SoundManager.instance.PlaySFXOneShot(SFXAudioID.Meow1);
             }
+
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                QuitGame();
+            }
         }
     }
 
     public void StartGame()
     {
         Debug.Log("Starting the game...");
+        ScoreManager.instance.ResetScore();
         SceneManager.LoadScene(gameSceneName, LoadSceneMode.Single);
         gameStarted = true;
         SoundManager.instance.PlayBGM(BGMAudioID.InGameMusic);
@@ -103,6 +102,7 @@ public class GameLoopScript : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Quitting the game...");
+        ScoreManager.instance.RecordHighScore();
         SceneManager.LoadScene(menuSceneName, LoadSceneMode.Single);
         gameStarted = false;
         SoundManager.instance.PlayBGM(BGMAudioID.MenuMusic);
