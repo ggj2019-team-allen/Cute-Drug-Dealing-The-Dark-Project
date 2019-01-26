@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     
     private BoxCollider2D boxCollide;
+    public int catNip = 10;
     public float Xspeed = 5f;
     public float Yspeed = 5f;
     public float xMin, xMax, yMin, yMax;
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
+        Debug.Log("Number of CatNip left: " + catNip);
         if (pdouse.dousing == false)
         {
             rigidBody.velocity = new Vector2(movement * Xspeed, movementY * Yspeed);

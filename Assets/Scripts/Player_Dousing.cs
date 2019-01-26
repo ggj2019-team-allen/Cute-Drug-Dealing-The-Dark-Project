@@ -9,6 +9,7 @@ public class Player_Dousing : MonoBehaviour
     private BoxCollider2D boxCollide;
     private PlayerController pcl;
     
+    
     public bool dousing = false;
 
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class Player_Dousing : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         boxCollide = GetComponent<BoxCollider2D>();
         pcl = GetComponent<PlayerController>();
+        
 
     }
 
@@ -30,17 +32,15 @@ public class Player_Dousing : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<NPC_Doused>().isDoused == false)
-        {
-            if (other.gameObject.tag == "NPC")
-            {
+        if (pcl.catNip > 0 && other.gameObject.tag == "NPC" && other.GetComponent<NPC_Doused>().isDoused == false)
+        { 
                 anim.SetTrigger("Player_Dousing");
                 rb2d.velocity = new Vector2(0, 0);
                 anim.SetFloat("Speed", 0);
                 anim.SetFloat("SpeedY", 0);
+                pcl.catNip -= 1;
                 dousing = true;
                 StartCoroutine(Undouse());
-            }
         }
     }
 
