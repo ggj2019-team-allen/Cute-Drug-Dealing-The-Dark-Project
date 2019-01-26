@@ -28,7 +28,7 @@ public class StartButtonScript : MonoBehaviour, IPointerDownHandler, IPointerUpH
         {
             if(holdTimer > 0.0f)
             {
-                holdTimer -= Time.deltaTime;
+                holdTimer = 0.0f;
             }
         }
     }

@@ -46,7 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundManager: {fileID: 6049245464708370472, guid: 065d3e64aa1b8ad4eb05c326a816e422,
     type: 3}
-  gameLoop: {fileID: 0}
+  scoreManager: {fileID: 3966500082421137177, guid: e23fbe9185efb5344b80190f23895ccd,
+    type: 3}
+  gameLoop: {fileID: 4203287436043975792}
 --- !u!114 &4203287436043975792
 MonoBehaviour:
   m_ObjectHideFlags: 0
