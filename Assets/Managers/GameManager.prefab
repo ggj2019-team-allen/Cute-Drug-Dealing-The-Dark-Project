@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundManager: {fileID: 6049245464708370472, guid: 065d3e64aa1b8ad4eb05c326a816e422,
     type: 3}
+  gameLoop: {fileID: 0}
 --- !u!114 &4203287436043975792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,3 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f57b84bae3cb834388fb088ebcf76e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  catPrefabs:
+  - {fileID: 4055770645559244937, guid: 2e952890f68ba5949ac49bdfddd4639c, type: 3}
+  - {fileID: 4910143999800493115, guid: 962d645e060cc7647b87e2858da13bf1, type: 3}
+  - {fileID: 8704144560051688927, guid: bfb36b1353fc8504f82fc80d3be8312b, type: 3}
