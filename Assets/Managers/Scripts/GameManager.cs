@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     [Header("Manager Prefabs")]
     public SoundManager soundManager;
 
+    [Header("Game Loop Script")]
+    public GameLoopScript gameLoop;
+
     // Delegates
     void Awake()
     {
@@ -36,6 +39,9 @@ public class GameManager : MonoBehaviour
             //Instantiate SoundManager prefab
             Instantiate(soundManager);
         }
+
+        //Cache components into the variables
+        gameLoop = GetComponent<GameLoopScript>();
     }
 
     // Update is called once per frame

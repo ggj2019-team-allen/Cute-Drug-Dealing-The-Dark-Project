@@ -19,7 +19,7 @@ public class GameLoopScript : MonoBehaviour
     void Update()
     {
         elapsedTime += Time.deltaTime;
-        Debug.Log("Update: Elapsed Time is " + elapsedTime);
+        //Debug.Log("Update: Elapsed Time is " + elapsedTime);
 
         if(elapsedTime >= 10.0f && !executed)
         {
@@ -27,5 +27,10 @@ public class GameLoopScript : MonoBehaviour
             SoundManager.instance.PlayBGM(BGMAudioID.MenuMusic);
             executed = true;
         }
+    }
+
+    public void StartGame()
+    {
+        Debug.Log("Starting the game...");
     }
 }
