@@ -7,11 +7,15 @@ public class RainbowText : MonoBehaviour
 {
     public bool active = false;
     public Text text;
+    public Color origColor;
+    private float randomStart;
 
     // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<Text>();
+        origColor = text.color;
+        randomStart = Random.Range(0.0f, 1.0f);
     }
 
     // Update is called once per frame
@@ -21,9 +25,9 @@ public class RainbowText : MonoBehaviour
         {
             text.color = new Color
             (
-                Mathf.PingPong(Time.time, 1),
-                Mathf.PingPong(Time.time + 0.5f, 1),
-                Mathf.PingPong(Time.time + 1.0f, 1)
+                Mathf.PingPong(Time.time + randomStart, 1),
+                Mathf.PingPong(Time.time + randomStart + 0.5f, 1),
+                Mathf.PingPong(Time.time + randomStart + 1.0f, 1)
             );
         }
     }
@@ -33,7 +37,7 @@ public class RainbowText : MonoBehaviour
         active = effect;
         if(!active)
         {
-            text.color = Color.white;
+            text.color = origColor;
         }
     }
 }

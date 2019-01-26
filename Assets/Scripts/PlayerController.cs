@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    
     private BoxCollider2D boxCollide;
     public float Xspeed = 5f;
     public float Yspeed = 5f;
