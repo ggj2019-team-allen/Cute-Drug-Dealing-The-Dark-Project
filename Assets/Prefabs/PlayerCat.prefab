@@ -51,10 +51,10 @@ MonoBehaviour:
   catNip: 10
   Xspeed: 5
   Yspeed: 5
-  xMin: -8.56
-  xMax: 8.54
-  yMin: -4.4
-  yMax: 4.4
+  xMin: -9.75
+  xMax: 9.75
+  yMin: -5
+  yMax: 2
   facingRight: 1
 --- !u!114 &2450775600333919362
 MonoBehaviour:
@@ -126,7 +126,7 @@ Animator:
   m_GameObject: {fileID: 1213082851465412775}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ad11dfdb4e0fa7541afcf2fdd7ae689b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8c5f0cce815b8e04585ca2f728a3cdc2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 3618458276959328497}
   m_Layer: 0
   m_Name: Sprite
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
