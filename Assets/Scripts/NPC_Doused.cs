@@ -8,6 +8,8 @@ public class NPC_Doused : MonoBehaviour
     private Rigidbody2D rb2d;
     private BoxCollider2D boxCollide;
 
+    public bool isDoused = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +29,14 @@ public class NPC_Doused : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if (isDoused == false)
         {
-            anim.SetTrigger("Doused");
-        }  
+            if (other.gameObject.tag == "Player")
+            {
+                isDoused = true;
+                anim.SetTrigger("Doused");
+                
+            }
+        }
     }
 }
