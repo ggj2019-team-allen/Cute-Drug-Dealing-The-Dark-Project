@@ -423,7 +423,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977616273}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -449,11 +449,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977616273}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 065cf648fe899c242a56c5b1587ee4be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dousing: 0
 --- !u!95 &1977616280
 Animator:
   serializedVersion: 3
@@ -462,7 +463,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977616273}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8c5f0cce815b8e04585ca2f728a3cdc2, type: 2}
   m_CullingMode: 0
@@ -634,3 +635,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c8cc58af51cd046a8fcc27aa868b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDoused: 0
