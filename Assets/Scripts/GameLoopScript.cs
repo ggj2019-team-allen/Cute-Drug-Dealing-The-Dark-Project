@@ -5,11 +5,14 @@ using UnityEngine;
 public class GameLoopScript : MonoBehaviour
 {
     float elapsedTime;
+    bool executed = false;
     
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("The Game Loop has started!");
+        SoundManager.instance.PlayBGM(BGMAudioID.InGameMusic);
+        SoundManager.instance.PlaySFXLooping(SFXAudioID.Meow1);
     }
 
     // Update is called once per frame
@@ -17,5 +20,12 @@ public class GameLoopScript : MonoBehaviour
     {
         elapsedTime += Time.deltaTime;
         Debug.Log("Update: Elapsed Time is " + elapsedTime);
+
+        if(elapsedTime >= 10.0f && !executed)
+        {
+            SoundManager.instance.StopSFX(SFXAudioID.Meow1);
+            SoundManager.instance.PlayBGM(BGMAudioID.MenuMusic);
+            executed = true;
+        }
     }
 }
