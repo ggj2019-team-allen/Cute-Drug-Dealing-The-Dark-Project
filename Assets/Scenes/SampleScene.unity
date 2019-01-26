@@ -306,6 +306,8 @@ GameObject:
   - component: {fileID: 1977616274}
   - component: {fileID: 1977616277}
   - component: {fileID: 1977616278}
+  - component: {fileID: 1977616280}
+  - component: {fileID: 1977616279}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -327,6 +329,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Xspeed: 5
   Yspeed: 5
+  xMin: -6.2
+  xMax: 5.642
+  yMin: -2.09
+  yMax: 3.883
 --- !u!212 &1977616275
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -383,7 +389,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977616273}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.18, y: 0.457, z: 0}
+  m_LocalPosition: {x: 5.642, y: 3.883, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -417,10 +423,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977616273}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -436,6 +442,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.96, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &1977616279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977616273}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065cf648fe899c242a56c5b1587ee4be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1977616280
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977616273}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c5f0cce815b8e04585ca2f728a3cdc2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2052050205
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +489,7 @@ GameObject:
   - component: {fileID: 2052050209}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
