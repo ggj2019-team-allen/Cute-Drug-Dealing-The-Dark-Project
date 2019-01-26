@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;// Required when using Event data.
 
 public class StartButtonScript : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    public RainbowText rainbowText;
+    public RainbowText[] rainbowText;
     public bool heldDown;
     public float holdTimer;
     public float maxHoldTime;
@@ -36,12 +36,18 @@ public class StartButtonScript : MonoBehaviour, IPointerDownHandler, IPointerUpH
     public void OnPointerDown(PointerEventData eventData)
     {
         heldDown = true;
-        rainbowText.SetEffectActive(heldDown);
+        for(int i = 0; i < rainbowText.Length; ++i)
+        {
+            rainbowText[i].SetEffectActive(heldDown);
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         heldDown = false;
-        rainbowText.SetEffectActive(heldDown);
+        for(int i = 0; i < rainbowText.Length; ++i)
+        {
+            rainbowText[i].SetEffectActive(heldDown);
+        }
     }
 }
