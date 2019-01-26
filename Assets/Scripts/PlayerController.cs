@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     private BoxCollider2D boxCollide;
     public float Xspeed = 5f;
     public float Yspeed = 5f;
-    private float movement = 0f;
     public float xMin, xMax, yMin, yMax;
     private Animator anim;
     private Rigidbody2D rigidBody;
