@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NPC_WayPoint : MonoBehaviour
 {
+    private NPC_Doused npcd;
     [SerializeField]
     Transform[] waypoints;
 
@@ -11,16 +12,35 @@ public class NPC_WayPoint : MonoBehaviour
     float moveSpeed = 2f;
 
     int waypointIndex = 0;
+
+    bool hasTeleported = false;
     
     void Start()
     {
-        transform.position = waypoints [waypointIndex].transform.position;
+        
+        npcd = GetComponent<NPC_Doused>();
 
     }
 
     void Update()
     {
-        Move();
+        if (npcd.isDoused == true)
+        {
+
+            if(!hasTeleported)
+            {
+                StartCoroutine(StartTeleport());
+                transform.position = waypoints[waypointIndex].transform.position;
+                hasTeleported = true;
+            }
+            
+            Move();
+        }
+    }
+
+    public IEnumerator StartTeleport()
+    {
+        yield return new WaitForSeconds(0.5f);
     }
 
     void Move()
