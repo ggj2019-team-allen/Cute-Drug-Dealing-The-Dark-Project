@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Manager Prefabs")]
     public SoundManager soundManager;
+    public ScoreManager scoreManager;
 
     [Header("Game Loop Script")]
     public GameLoopScript gameLoop;
@@ -38,6 +39,12 @@ public class GameManager : MonoBehaviour
         {
             //Instantiate SoundManager prefab
             Instantiate(soundManager);
+        }
+
+        if (ScoreManager.instance == null)
+        {
+            //Instantiate SoundManager prefab
+            Instantiate(scoreManager);
         }
 
         //Cache components into the variables

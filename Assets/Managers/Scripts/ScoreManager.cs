@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager instance = null;
 
     public int score;
+    public int highScore;
     public int[] catsCount;
     public CatProfile[] scoreProfiles;
 
@@ -29,7 +30,7 @@ public class ScoreManager : MonoBehaviour
         }
         
         //Sets this to not be destroyed when reloading scene
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 
     void OnValidate()
@@ -62,5 +63,11 @@ public class ScoreManager : MonoBehaviour
             }
         }
         return 0;
+    }
+
+    public int RecordHighScore()
+    {
+        highScore = score;
+        return highScore;
     }
 }
