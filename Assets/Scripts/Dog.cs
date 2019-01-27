@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Dog : MonoBehaviour
 {
-    bool isPlayer = false;
     void OnTriggerEnter2D(Collider2D other)
     {
-            isPlayer = true;
+        if(other.gameObject.tag == "Player")
+        {
             other.GetComponent<PlayerController>().TriggeredSlow();
-            isPlayer = false;
+        }
     }
 }
