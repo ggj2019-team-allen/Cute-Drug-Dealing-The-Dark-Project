@@ -37,6 +37,7 @@ public class SpawnerScript : MonoBehaviour
                 whereToSpawn = new Vector2(xNum[randX], spawnPoints[randY].transform.position.y);
                 GameObject newCat = Instantiate(npc, whereToSpawn, Quaternion.identity);
                 newCat.GetComponent<NPC_WayPoint>().waypoints = waypoints;
+                newCat.GetComponent<NPC_Data>().Initialize((CatType)Random.Range(0, (int)CatType.TOTAL));
                 spawnCount += 1;
 
             }

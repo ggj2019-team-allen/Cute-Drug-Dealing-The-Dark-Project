@@ -63,6 +63,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSceneName: MainGameScene
   menuSceneName: MenuScene
+  catSprites:
+  - {fileID: 21300000, guid: 920cdd427f5d3fe4eace53a9916fe659, type: 3}
+  - {fileID: 21300000, guid: 93db2f96d28a3134bb6a429f16b8c948, type: 3}
+  - {fileID: 21300000, guid: 261ecb1f995a69c41a781bc4cf7648e5, type: 3}
   catPrefabs:
   - {fileID: 4055770645559244937, guid: 2e952890f68ba5949ac49bdfddd4639c, type: 3}
   - {fileID: 4910143999800493115, guid: 962d645e060cc7647b87e2858da13bf1, type: 3}
