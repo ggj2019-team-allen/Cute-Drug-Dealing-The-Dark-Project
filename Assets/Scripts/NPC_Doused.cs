@@ -32,5 +32,6 @@ public class NPC_Doused : MonoBehaviour
     {
         isDoused = true;
         ps.Play();
+        SoundManager.instance.PlaySFXOneShot(SFXAudioID.Meow1);
     }
 }

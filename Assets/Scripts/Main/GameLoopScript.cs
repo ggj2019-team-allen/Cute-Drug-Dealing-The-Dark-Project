@@ -13,6 +13,9 @@ public class GameLoopScript : MonoBehaviour
 
     bool gameStarted;
 
+    [Header("Sprites")]
+    public Sprite[] catSprites;
+
     [Header("Testing")]
     public GameObject[] catPrefabs;
     
@@ -106,5 +109,10 @@ public class GameLoopScript : MonoBehaviour
         SceneManager.LoadScene(menuSceneName, LoadSceneMode.Single);
         gameStarted = false;
         SoundManager.instance.PlayBGM(BGMAudioID.MenuMusic);
+    }
+
+    public Sprite GetCatSprite(CatType type)
+    {
+        return catSprites[(int)type];
     }
 }
