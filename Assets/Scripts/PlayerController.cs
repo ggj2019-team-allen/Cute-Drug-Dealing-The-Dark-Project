@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    
     private BoxCollider2D boxCollide;
     public int catNip = 10;
     public float Xspeed = 5f;
@@ -16,6 +17,11 @@ public class PlayerController : MonoBehaviour
     float movement = 0f;
     float movementY = 0f;
     public bool facingRight = true;
+    public float slowTimer;
+    public float maxslowTime;   
+    float speedMultiplier = 1.0f;
+    bool slowTriggered;
+    bool slowed;
     
     // Start is called before the first frame update
     void Start()
@@ -41,6 +47,25 @@ public class PlayerController : MonoBehaviour
             if (movement > 0 && !facingRight) Flip();
 
         }
+        if(slowed == true)
+        {
+            if (slowTimer < maxslowTime)
+            {
+                slowTimer += Time.deltaTime;
+            }
+            else
+            {
+                slowed = false;
+                speedMultiplier = 1.0f;
+            }
+        }
+    }
+
+    public void TriggeredSlow()
+    {
+        speedMultiplier = 0.1f;
+        slowTimer = 0.0f;
+        slowed = true;
     }
 
     void Flip()
@@ -54,7 +79,7 @@ public class PlayerController : MonoBehaviour
     {
         if (pdouse.dousing == false)
         {
-            rigidBody.velocity = new Vector2(movement * Xspeed, movementY * Yspeed);
+            rigidBody.velocity = new Vector2(movement * Xspeed * speedMultiplier, movementY * Yspeed * speedMultiplier);
 
             rigidBody.position = new Vector2
             (
@@ -62,4 +87,5 @@ public class PlayerController : MonoBehaviour
             );
         }
     }
+    
 }
