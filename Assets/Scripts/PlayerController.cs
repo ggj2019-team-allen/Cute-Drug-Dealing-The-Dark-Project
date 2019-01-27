@@ -52,7 +52,6 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Debug.Log("Number of CatNip left: " + catNip);
         if (pdouse.dousing == false)
         {
             rigidBody.velocity = new Vector2(movement * Xspeed, movementY * Yspeed);

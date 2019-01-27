@@ -34,13 +34,16 @@ public class Player_Dousing : MonoBehaviour
     {
         if (pcl.catNip > 0 && other.gameObject.tag == "NPC" && other.GetComponent<NPC_Doused>().isDoused == false)
         { 
-                anim.SetTrigger("Player_Dousing");
-                rb2d.velocity = new Vector2(0, 0);
-                anim.SetFloat("Speed", 0);
-                anim.SetFloat("SpeedY", 0);
-                pcl.catNip -= 1;
-                dousing = true;
-                StartCoroutine(Undouse());
+            anim.SetTrigger("Player_Dousing");
+            rb2d.velocity = new Vector2(0, 0);
+            anim.SetFloat("Speed", 0);
+            anim.SetFloat("SpeedY", 0);
+            pcl.catNip -= 1;
+            Debug.Log("Catnip: " + pcl.catNip);
+            dousing = true;
+            StartCoroutine(Undouse());
+
+            other.GetComponent<NPC_Doused>().TriggerDoused();
         }
     }
 
