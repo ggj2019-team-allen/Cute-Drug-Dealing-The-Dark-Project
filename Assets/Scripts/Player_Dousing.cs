@@ -8,6 +8,8 @@ public class Player_Dousing : MonoBehaviour
     private Rigidbody2D rb2d;
     private BoxCollider2D boxCollide;
     private PlayerController pcl;
+
+    public CatnipUI catnipUI;
     
     
     public bool dousing = false;
@@ -39,6 +41,7 @@ public class Player_Dousing : MonoBehaviour
             anim.SetFloat("Speed", 0);
             anim.SetFloat("SpeedY", 0);
             pcl.catNip -= 1;
+            catnipUI.UpdateUI(pcl.catNip);
             Debug.Log("Catnip: " + pcl.catNip);
             dousing = true;
             StartCoroutine(Undouse());

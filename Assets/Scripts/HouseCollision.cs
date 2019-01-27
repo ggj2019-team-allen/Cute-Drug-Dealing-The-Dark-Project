@@ -6,6 +6,7 @@ public class HouseCollision : MonoBehaviour
 {
     private BoxCollider2D boxCollide;
     public SpawnerScript spawn;
+    public CatnipUI catnipUI;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class HouseCollision : MonoBehaviour
        if (other.gameObject.tag == "Player")
         {
             other.GetComponent<PlayerController>().catNip = 10;
+            catnipUI.UpdateUI(10);
         }
        if(other.gameObject.tag=="NPC")
         {
