@@ -65,8 +65,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1670401973
-  m_SortingLayer: 3
+  m_SortingLayerID: -539493291
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 920cdd427f5d3fe4eace53a9916fe659, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -235,10 +235,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8752344716146282154}
     m_Modifications:
-    - target: {fileID: 247910935772371468, guid: 43be8b10295444540b0a2b117d779c6d,
+    - target: {fileID: 2947518885215087141, guid: 43be8b10295444540b0a2b117d779c6d,
         type: 3}
-      propertyPath: m_Name
-      value: CatNipEffect
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3321183232340224355, guid: 43be8b10295444540b0a2b117d779c6d,
         type: 3}
@@ -295,10 +295,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2947518885215087141, guid: 43be8b10295444540b0a2b117d779c6d,
+    - target: {fileID: 247910935772371468, guid: 43be8b10295444540b0a2b117d779c6d,
         type: 3}
-      propertyPath: playOnAwake
-      value: 0
+      propertyPath: m_Name
+      value: CatNipEffect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43be8b10295444540b0a2b117d779c6d, type: 3}

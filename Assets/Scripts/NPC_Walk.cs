@@ -4,19 +4,28 @@ using UnityEngine;
 
 public class NPC_Walk : MonoBehaviour
 {
+    private NPC_Doused npcd;
     public float speed;
 
 	public Vector2 startDirection;
     private bool movingToEnd = true;
 
 	public SpriteRenderer spriteRenderer;
+    
+    void Start()
+    {
+        npcd = GetComponent<NPC_Doused>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(startDirection * speed * Time.deltaTime);
+        if(!npcd.isDoused)
+        {
+            transform.Translate(startDirection * speed * Time.deltaTime);
 
-		spriteRenderer.flipX = startDirection.x >= 0.0f;
+            spriteRenderer.flipX = startDirection.x >= 0.0f;
+        }
     }
 
 	void OnTriggerExit2D(Collider2D other)

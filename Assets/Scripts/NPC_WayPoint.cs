@@ -29,18 +29,21 @@ public class NPC_WayPoint : MonoBehaviour
 
             if(!hasTeleported)
             {
+                //transform.position = waypoints[waypointIndex].transform.position;
                 StartCoroutine(StartTeleport());
-                transform.position = waypoints[waypointIndex].transform.position;
-                hasTeleported = true;
+            }
+            else
+            {
+                Move();
             }
             
-            Move();
         }
     }
 
     public IEnumerator StartTeleport()
     {
         yield return new WaitForSeconds(0.5f);
+        hasTeleported = true;
     }
 
     void Move()

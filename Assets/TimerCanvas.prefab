@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 8466496212616301677}
   - component: {fileID: 8466496212616301650}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: TimerCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,4 +191,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9406ee6bc9c0dc342b5bd13592ff1a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingTime: 20
   countdownText: {fileID: 8466496211911670443}
