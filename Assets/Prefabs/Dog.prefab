@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4235845575156762793}
   m_Layer: 0
   m_Name: Dog
-  m_TagString: Untagged
+  m_TagString: Catnapper
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d164af6e697024e9e8082d7e6ccfaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
 --- !u!61 &1825558560698035510
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64,8 +65,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 2}
-    newSize: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.0351562, y: 1.5}
+    newSize: {x: 2.0351562, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -104,7 +105,7 @@ Animator:
   m_GameObject: {fileID: 3918084783744688473}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 136c1c6ccf8908b4082dd634438ddeff, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

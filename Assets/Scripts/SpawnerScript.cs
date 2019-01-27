@@ -15,7 +15,7 @@ public class SpawnerScript : MonoBehaviour
     int randX;
     Vector2 whereToSpawn;
     public float spawnRate = 5f;
-    float nextSpawn = 10f;
+    float nextSpawn = 2.0f;
     private int randY;
     public Transform[] waypoints;
 

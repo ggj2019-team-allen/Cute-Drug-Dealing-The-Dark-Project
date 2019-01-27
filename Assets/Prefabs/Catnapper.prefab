@@ -48,7 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 770c51c0fba04c6439c8269dbcc39dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn: {fileID: 0}
   speed: 5
 --- !u!61 &1996612691318152281
 BoxCollider2D:
@@ -67,8 +66,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 2}
-    newSize: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.6875, y: 4}
+    newSize: {x: 4.6875, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -92,6 +91,7 @@ MonoBehaviour:
   spawnCount: 0
   spawnPoints: []
   npc: {fileID: 0}
+  dog: {fileID: 0}
   spawnRate: 5
   nextSpawn: 10
   waypoints: []

@@ -177,6 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   bodySpRend: {fileID: 4582342563623499954}
+  anim: {fileID: 5915377003157201080}
 --- !u!61 &5922747262730994271
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class CatnapperSpawner : MonoBehaviour
     public Transform[] spawnPoints;
     private float xNum = 11.35f;
     public GameObject npc;
+    public GameObject dog;
     int randX;
     Vector2 whereToSpawn;
     public float spawnRate = 5f;
@@ -35,7 +36,14 @@ public class CatnapperSpawner : MonoBehaviour
                 
 
                 whereToSpawn = new Vector2(xNum, spawnPoints[randY].transform.position.y);
-                GameObject catNapper = Instantiate(npc, whereToSpawn, Quaternion.identity);
+                if(Random.Range(0, 2) == 0)
+                {
+                    GameObject catNapper = Instantiate(npc, whereToSpawn, Quaternion.identity);
+                }
+                else
+                {
+                    GameObject doggy = Instantiate(dog, whereToSpawn, Quaternion.identity);
+                }
                 spawnCount += 1;
 
             }
