@@ -5,11 +5,9 @@ using UnityEngine;
 public class NPC_WayPoint : MonoBehaviour
 {
     private NPC_Doused npcd;
-    [SerializeField]
-    Transform[] waypoints;
-
-    [SerializeField]
-    float moveSpeed = 2f;
+    public Transform[] waypoints;
+    
+    public float moveSpeed = 2f;
 
     int waypointIndex = 0;
 

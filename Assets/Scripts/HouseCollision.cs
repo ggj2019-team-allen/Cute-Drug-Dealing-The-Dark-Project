@@ -5,6 +5,7 @@ using UnityEngine;
 public class HouseCollision : MonoBehaviour
 {
     private BoxCollider2D boxCollide;
+    public SpawnerScript spawn;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class HouseCollision : MonoBehaviour
        if(other.gameObject.tag=="NPC")
         {
             Destroy(other.gameObject);
+            spawn.spawnCount -= 1;
         }
      }
 }
