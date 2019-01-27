@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8e3f6e25df552429fdf2af92d7f479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnLimit: 0
+  spawnLimit: 10
   spawnCount: 0
   spawnPoints:
   - {fileID: 0}

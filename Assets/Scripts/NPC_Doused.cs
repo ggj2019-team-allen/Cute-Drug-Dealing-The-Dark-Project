@@ -28,18 +28,9 @@ public class NPC_Doused : MonoBehaviour
         
     }
 
-
-
-    void OnTriggerEnter2D(Collider2D other)
+    public void TriggerDoused()
     {
-        if (isDoused == false && other.gameObject.tag == "Player")
-        {
-            
-                isDoused = true;
-                ps.Play();
-                
-                
-            
-        }
+        isDoused = true;
+        ps.Play();
     }
 }
