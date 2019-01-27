@@ -27,6 +27,7 @@ public class HouseCollision : MonoBehaviour
         }
        if(other.gameObject.tag=="NPC")
         {
+            ScoreManager.instance.AddScore(other.GetComponent<NPC_Data>().type);
             Destroy(other.gameObject);
             spawn.spawnCount -= 1;
         }
